@@ -1,0 +1,12 @@
+@behaviour(supervisor)
+
+fn start_link @public case:
+  Server = #i module
+  Module = #i module
+
+  supervisor.start_link((local, Server), Module, [])
+end
+
+fn init @public case _Args:
+  (ok, ((one_for_all, 0, 1), []))
+end

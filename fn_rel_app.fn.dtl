@@ -1,0 +1,9 @@
+@behaviour(application)
+
+fn start @public case _StartType, _StartArgs:
+  {{ name }}_sup.start_link()
+end
+
+fn stop @public case _State:
+  ok
+end

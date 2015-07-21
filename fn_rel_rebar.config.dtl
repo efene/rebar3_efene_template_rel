@@ -1,0 +1,48 @@
+{deps, [
+    {lager, {git, "https://github.com/basho/lager.git", {tag, "2.1.1"}}}
+]}.
+
+{relx, [{release, { {{ name }}, "0.1.0"},
+         [{{ name }},
+          sasl]},
+
+        {sys_config, "./config/sys.config"},
+        {vm_args, "./config/vm.args"},
+
+        {dev_mode, true},
+        {include_erts, false},
+
+        {extended_start_script, true},
+
+        {overlay_vars, "config/vars.config"},
+        {overlay, [
+            {mkdir, "etc"},
+            {mkdir, "bin"},
+            {template, "./_build/default/plugins/cuttlefish/priv/erlang_vm.schema",
+                        "share/schema/11-erlang_vm.schema"},
+            {template, "config/config.schema", "share/schema/21-{{ name }}.schema"},
+            {template, "./config/extended_bin", "bin/{{ name }}"},
+            {template, "./config/vm.args", "etc/vm.args"},
+            {template, "./config/advanced.config", "etc/advanced.config"},
+            {copy, "./_build/default/bin/cuttlefish", "bin/cuttlefish"}
+        ]}
+]}.
+
+{plugins, [
+    {rebar3_efene_compile, ".*", {git, "https://github.com/efene/rebar3_efene_compile.git", {branch, "master"}}},
+    {rebar3_efene_ct, ".*", {git, "https://github.com/efene/rebar3_efene_ct.git", {branch, "master"}}},
+    {rebar3_run, ".*", {git, "git://github.com/tsloughter/rebar3_run.git", {branch, "master"}}},
+    {rebar3_cuttlefish, {git, "git@github.com:tsloughter/rebar3_cuttlefish.git", {branch, "master"}}}
+]}.
+
+{profiles, [{prod, [{relx, [{dev_mode, false},
+                            {include_erts, true}]}]
+            }]
+}.
+
+{provider_hooks, [
+    {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]},
+    {post, [{release, cuttlefish}]}
+]}.
+
+{erl_opts, [debug_info, {parse_transform, lager_transform}]}.
