@@ -11,6 +11,7 @@
 {template, "fn_rel_editorconfig.dtl", ".editorconfig"}.
 {template, "fn_rel_gitignore.dtl", ".gitignore"}.
 {template, "fn_rel_README.rst.dtl", "README.rst"}.
+{template, "fn_rel_Makefile.dtl", "Makefile"}.
 
 {file, "fn_rel_extended_bin", "config/extended_bin"}.
 {template, "fn_rel_config.schema.dtl", "config/config.schema"}.
