@@ -3,9 +3,9 @@
     {name, "myrel", "Name of the application"},
     {desc, "An efene application", "Short description of the app"}
 ]}.
-{template, "fn_rel.app.src.dtl", "src/{{name}}.app.src"}.
-{template, "fn_rel_app.fn.dtl", "src/{{name}}_app.fn"}.
-{template, "fn_rel_sup.fn.dtl", "src/{{name}}_sup.fn"}.
+{template, "fn_rel.app.src.dtl", "apps/{{name}}/src/{{name}}.app.src"}.
+{template, "fn_rel_app.fn.dtl", "apps/{{name}}/src/{{name}}_app.fn"}.
+{template, "fn_rel_sup.fn.dtl", "apps/{{name}}/src/{{name}}_sup.fn"}.
 {template, "fn_rel_suite.fn.dtl", "test/{{name}}_SUITE.fn"}.
 {template, "fn_rel_rebar.config.dtl", "rebar.config"}.
 {template, "fn_rel_editorconfig.dtl", ".editorconfig"}.
