@@ -20,4 +20,4 @@
 {template, "fn_rel_vars.config.dtl", "{{name}}/config/vars.config"}.
 {template, "fn_rel_vm.args.dtl", "{{name}}/config/vm.args"}.
 
-{chmod, "config/extended_bin", 8#744}.
+{chmod, "{{name}}/config/extended_bin", 8#744}.
