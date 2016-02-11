@@ -1,6 +1,7 @@
 @behaviour(application)
 
 fn start @public case _StartType, _StartArgs:
+  lager.info("starting {{ name }}")
   {{ name }}_sup.start_link()
 end
 
