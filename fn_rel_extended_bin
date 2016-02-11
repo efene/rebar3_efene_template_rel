@@ -87,11 +87,11 @@ relx_start_command() {
            "$START_OPTION"
 }
 
-# Use $CWD/vm.args if exists, otherwise releases/VSN/vm.args
+# Use $CWD/etc/vm.args if exists, otherwise releases/VSN/vm.args
 if [ -z "$VMARGS_PATH" ]; then
-    if [ -f "$RELEASE_ROOT_DIR/vm.args" ]; then
-        VMARGS_PATH="$RELEASE_ROOT_DIR/vm.args"
-        USE_DIR="$RELEASE_ROOT_DIR"
+    if [ -f "$RELEASE_ROOT_DIR/etc/vm.args" ]; then
+        VMARGS_PATH="$RELEASE_ROOT_DIR/etc/vm.args"
+        USE_DIR="$RELEASE_ROOT_DIR/etc"
     else
         USE_DIR="$REL_DIR"
         VMARGS_PATH="$REL_DIR/vm.args"
