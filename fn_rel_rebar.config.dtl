@@ -29,9 +29,10 @@
 {plugins, [
     rebar3_efene_compile,
     rebar3_efene_ct,
-    rebar3_run,
-    rebar3_cuttlefish
+    rebar3_run
 ]}.
+
+{project_plugins, [rebar3_cuttlefish]}.
 
 {profiles, [{prod, [{relx, [{dev_mode, false},
                             {include_erts, true}]}]
@@ -39,8 +40,7 @@
 }.
 
 {provider_hooks, [
-    {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]},
-    {post, [{release, cuttlefish}]}
+    {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]}
 ]}.
 
 {erl_opts, [debug_info, {parse_transform, lager_transform}]}.
