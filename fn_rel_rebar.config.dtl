@@ -19,10 +19,7 @@
             {template, "./_build/default/plugins/cuttlefish/priv/erlang_vm.schema",
                         "share/schema/11-erlang_vm.schema"},
             {template, "config/config.schema", "share/schema/21-{{ name }}.schema"},
-            {template, "./config/extended_bin", "bin/{{ name }}"},
-            {template, "./config/vm.args", "etc/vm.args"},
-            {template, "./config/advanced.config", "etc/advanced.config"},
-            {copy, "./_build/default/bin/cuttlefish", "bin/cuttlefish"}
+            {template, "./config/advanced.config", "etc/advanced.config"}
         ]}
 ]}.
 
