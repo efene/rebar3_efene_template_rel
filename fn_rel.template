@@ -3,10 +3,10 @@
     {name, "myrel", "Name of the release"},
     {desc, "An efene application", "Short description of the app"}
 ]}.
-{template, "fn_rel.app.src.dtl", "{{name}}/apps/{{name}}/src/{{name}}.app.src"}.
-{template, "fn_rel_app.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_app.fn"}.
-{template, "fn_rel_sup.fn.dtl", "{{name}}/apps/{{name}}/src/{{name}}_sup.fn"}.
-{template, "fn_rel_suite.fn.dtl", "{{name}}/test/{{name}}_SUITE.fn"}.
+{template, "fn_rel.app.src.dtl",  "{{name}}/apps/{{name}}/src/{{name}}.app.src"}.
+{template, "fn_rel_app.fn.dtl",   "{{name}}/apps/{{name}}/src/{{name}}_app.fn"}.
+{template, "fn_rel_sup.fn.dtl",   "{{name}}/apps/{{name}}/src/{{name}}_sup.fn"}.
+{template, "fn_rel_suite.fn.dtl", "{{name}}/apps/{{name}}/test/{{name}}_SUITE.fn"}.
 {template, "fn_rel_rebar.config.dtl", "{{name}}/rebar.config"}.
 {template, "fn_rel_editorconfig.dtl", "{{name}}/.editorconfig"}.
 {template, "fn_rel_gitignore.dtl", "{{name}}/.gitignore"}.

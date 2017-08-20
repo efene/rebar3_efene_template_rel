@@ -8,3 +8,7 @@ end
 fn stop @public case _State:
   ok
 end
+
+fn add @public case A, B:
+  A + B
+end
