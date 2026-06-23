@@ -1,4 +1,4 @@
-{deps, [lager]}.
+{deps, []}.
 
 {relx, [{release, { {{ name }}, "0.1.0"},
          [{{ name }},
@@ -36,4 +36,4 @@
     {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]}
 ]}.
 
-{erl_opts, [debug_info, {parse_transform, lager_transform}]}.
+{erl_opts, [debug_info]}.
