@@ -1,3 +1,5 @@
+{minimum_otp_vsn, "27"}.
+
 {deps, []}.
 
 {relx, [{release, { {{ name }}, "0.1.0"},
@@ -10,22 +12,10 @@
         {dev_mode, true},
         {include_erts, false},
 
-        {extended_start_script, true},
-
-        {overlay_vars, "config/vars.config"},
-        {overlay, [
-            {mkdir, "etc"},
-            {mkdir, "bin"},
-            {template, "./_build/default/plugins/cuttlefish/priv/erlang_vm.schema",
-                        "share/schema/11-erlang_vm.schema"},
-            {template, "config/config.schema", "share/schema/21-{{ name }}.schema"},
-            {template, "./config/advanced.config", "etc/advanced.config"}
-        ]}
+        {extended_start_script, true}
 ]}.
 
-{plugins, [rebar3_efene, rebar3_run]}.
-
-{project_plugins, [rebar3_cuttlefish]}.
+{plugins, [{rebar3_efene, "0.2.1"}, {rebar3_run, "0.5.0"}]}.
 
 {profiles, [{prod, [{relx, [{dev_mode, false},
                             {include_erts, true}]}]
@@ -36,4 +26,9 @@
     {pre, [{ct, {efene, ct}}, {compile, {efene, compile}}]}
 ]}.
 
-{erl_opts, [debug_info]}.
+{erl_opts, [debug_info, warnings_as_errors]}.
+
+{dialyzer, [{warnings, [unmatched_returns, error_handling, unknown]}]}.
+
+{xref_checks, [undefined_function_calls, undefined_functions,
+               locals_not_used, deprecated_function_calls]}.

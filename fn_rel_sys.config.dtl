@@ -1,3 +1,31 @@
 [
-  { {{ name }}, []}
+  {kernel, [
+    {logger_level, info},
+    {logger, [
+      {handler, default, logger_std_h,
+       #{formatter => {logger_formatter, #{single_line => true}}}}
+    ]}
+  ]},
+
+  { {{ name }}, [
+    %% HTTP API
+    {http_enabled, true},
+    {http_port, 8080},
+    {http_acceptors, 100},
+
+    %% HTTPS API
+    {https_enabled, false},
+    {https_port, 8443},
+    {https_acceptors, 100},
+
+    %% CORS: cors_origins is `any' or a list of binaries
+    {cors_enabled, false},
+    {cors_origins, any},
+    {cors_headers, []},
+    {cors_max_age_secs, 60},
+
+    %% Auth: IMPORTANT change auth_secret before deploying
+    {auth_secret, <<"changeme">>},
+    {session_duration_secs, 86400}
+  ]}
 ].

@@ -2,5 +2,4 @@
 
 -setcookie {{ name }}_cookie
 
-+K true
-+A30
++A 30

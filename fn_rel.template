@@ -12,12 +12,7 @@
 {template, "fn_rel_gitignore.dtl", "{{name}}/.gitignore"}.
 {template, "fn_rel_README.rst.dtl", "{{name}}/README.rst"}.
 {template, "fn_rel_Makefile.dtl", "{{name}}/Makefile"}.
+{template, "fn_rel_tool_versions.dtl", "{{name}}/.tool-versions"}.
 
-{file, "fn_rel_extended_bin", "{{name}}/config/extended_bin"}.
-{template, "fn_rel_config.schema.dtl", "{{name}}/config/config.schema"}.
-{template, "fn_rel_advanced.config.dtl", "{{name}}/config/advanced.config"}.
 {template, "fn_rel_sys.config.dtl", "{{name}}/config/sys.config"}.
-{template, "fn_rel_vars.config.dtl", "{{name}}/config/vars.config"}.
 {template, "fn_rel_vm.args.dtl", "{{name}}/config/vm.args"}.
-
-{chmod, "{{name}}/config/extended_bin", 8#744}.
